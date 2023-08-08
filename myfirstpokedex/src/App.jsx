@@ -11,9 +11,10 @@ function App() {
     console.log("User search: " + userSearch)
     const response = await fetch('https://pokeapi.co/api/v2/pokemon/' + search)
     const pokemonData = await response.json()
-    console.log("pokemon data",pokemonData)
+    console.log("pokemon data", pokemonData)
     setPokemon(pokemonData)
   }
+
 
   useEffect(() => {
     searchPokemon(userSearch)
@@ -23,10 +24,11 @@ function App() {
   return (
     <>
       <Searcher userSearch={userSearch} setUserSearch={setUserSearch} />
-{
-  pokemon && pokemon !== {} &&
-  <Display pokemon={pokemon}></Display>
-}
+      {
+        pokemon &&
+        <Display pokemon={pokemon}></Display>
+      }
+
     </>
   )
 }

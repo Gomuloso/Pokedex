@@ -19,10 +19,12 @@ export default function Display({ pokemon }) {
       </audio>
       <img src={pokemon?.sprites?.front_default}></img>
       <img src={pokemon?.sprites?.front_shiny}></img>
-      <p>Type 1: {pokemon?.types?.[0]?.type?.name}</p>
-      {
-        pokemon?.types?.[1]?.type?.name &&
-        <p>Type 2: {pokemon?.types?.[1]?.type?.name}</p>
+    
+      <img src={`tipos/${pokemon?.types?.[0]?.type?.name}.jpg`}>
+      </img>{
+         pokemon?.types?.[1]?.type?.name &&
+        <img src={`tipos/${pokemon?.types?.[1]?.type?.name}.jpg`}>
+        </img>
       }
     </div>)
 }
